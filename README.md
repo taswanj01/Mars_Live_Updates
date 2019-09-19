@@ -1,1 +1,1 @@
-This project is an app that uses Splinter, Flask, PyMongo and Pandas to gather web data from NASA, Twitter and other public websites to report to the user real-time facts and images about the planet Mars.
+This project is an app that uses Splinter, Flask, PyMongo and Pandas to gather web data from NASA, Twitter and other public websites to report to the user real-time facts and images related to the planet Mars.
