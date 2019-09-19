@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/mars_scrape" role="button">Click here to
+                    display the latest news, facts and images about the Red Planet</a>
+            </p>
+            <p>Please allow time for the data and images to load</p>
+        </div>
+
+        <div>
+            <h1>Latest Mars News</h1>
+            <h3>{{mars_data.Mars_latest_news_title}}</h3>
+            <p>{{mars_data.Mars_latest_news_text}}</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Latest Featured Mars Image</h1>
+                <a><img src="{{mars_data.Mars_latest_featured_image}}" alt="Mars latest featured image" width="750"
+                        height="495"></a>
+            </div>
+
+            <div class="col-md-4">
+                <div style="margin-top: 3rem; background-color: lightgray;
+                border-style: solid; border-color: darkgray; border-radius: 5px;">
+                    <h3 style="padding-left: 1rem; text-align:left;">Current Weather on Mars</h3>
+                    <p style="padding-left: 1rem;">{{mars_data.Mars_weather}}</p>
+                </div>
+                <div style="margin-top: 3rem;">
+                    <h3>Mars Facts</h3>
+                    {{mars_data.Mars_facts_table | safe}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div style="background-color: lightgray; margin-top: 3rem;
+            border-radius: 8px; margin-bottom: 3rem;">
+                <h1 style="padding: 2rem; text-align: center;">Mars Hemispheres</h1>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 10px;">
+            <div class="col-lg-6">
+                <div style="margin-bottom: 8px; padding: 10px; border-style: solid; border-color: lightgray;
+                border-radius: 4px;">
+                    <img class="image-fluid" src="{{mars_data.Mars_hemispheres_pics.0.img_url}}" style="width: 100%">
+                    <h3>{{mars_data.Mars_hemispheres_pics.0.title}} Enhanced</h3>
+                </div>
+                <div style="margin-bottom: 8px; padding: 10px; border-style: solid; border-color: lightgray;
+                border-radius: 4px;">
+                    <img class="image-fluid" src="{{mars_data.Mars_hemispheres_pics.1.img_url}}" style="width: 100%">
+                    <h3>{{mars_data.Mars_hemispheres_pics.1.title}} Enhanced</h3>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div style="margin-bottom: 8px; padding: 10px; border-style: solid; border-color: lightgray;
+                    border-radius: 4px;">
+                    <img class="image-fluid" src="{{mars_data.Mars_hemispheres_pics.2.img_url}}" style="width: 100%">
+                    <h3>{{mars_data.Mars_hemispheres_pics.2.title}} Enhanced</h3>
+                </div>
+                <div style="margin-bottom: 8px; padding: 10px; border-style: solid; border-color: lightgray;
+                    border-radius: 4px;">
+                    <img class="image-fluid" src="{{mars_data.Mars_hemispheres_pics.3.img_url}}" style="width: 100%">
+                    <h3>{{mars_data.Mars_hemispheres_pics.3.title}} Enhanced</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
